@@ -643,8 +643,6 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data-science"
-      PublicAccessBlockConfiguration:
-        RestrictPublicBuckets: True
 
   LogsBucket:
     # not encrypted
@@ -667,6 +665,8 @@ Resources:
    ########################
    ### Clean S3 Buckets ###
    ########################
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: True
   CleanupRole:
     Type: AWS::IAM::Role
     Properties:
